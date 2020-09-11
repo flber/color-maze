@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/floor.png" type="Texture" id=1]
+[ext_resource path="res://tiles/Floor.gd" type="Script" id=2]
+[ext_resource path="res://tiles/coloring.tres" type="Material" id=3]
+
+[node name="Floor" type="Sprite"]
+material = ExtResource( 3 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )

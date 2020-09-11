@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/blood.png" type="Texture" id=1]
+[ext_resource path="res://player/Blood.gd" type="Script" id=2]
+[ext_resource path="res://enemy/Color.tres" type="Material" id=3]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 12.5564
+height = 25.2814
+
+[node name="Blood" type="Area2D"]
+collision_layer = 4
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+material = ExtResource( 3 )
+texture = ExtResource( 1 )
+
+[node name="Lifetime" type="Timer" parent="."]
+autostart = true
+[connection signal="body_entered" from="." to="." method="_on_Blood_body_entered"]
+[connection signal="timeout" from="Lifetime" to="." method="_on_Lifetime_timeout"]

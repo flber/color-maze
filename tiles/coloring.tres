@@ -1,0 +1,18 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+render_mode unshaded;
+
+uniform vec3 color;
+
+void fragment(){
+	vec4 input_color = texture(TEXTURE, UV);
+	COLOR.rgb = color;
+	COLOR.a = input_color.a;
+}"
+custom_defines = ""
+
+[resource]
+shader = SubResource( 1 )
+shader_param/color = null

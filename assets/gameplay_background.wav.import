@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/gameplay_background.wav-00136d7e837ba3e64f688a1d7ef0d580.sample"
+
+[deps]
+
+source_file="res://assets/gameplay_background.wav"
+dest_files=[ "res://.import/gameplay_background.wav-00136d7e837ba3e64f688a1d7ef0d580.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

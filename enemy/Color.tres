@@ -1,0 +1,26 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=2]
+
+[ext_resource path="res://enemy/gradient_tex.tres" type="Texture" id=1]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+render_mode unshaded;
+
+uniform sampler2D gradient: hint_black;
+uniform float mix_amount = 1.0;
+uniform float size = 0.5;
+
+void fragment(){
+	vec4 input_color = texture(TEXTURE, UV);
+	vec3 sampled_color = texture(gradient, vec2(size, 0.0)).rgb;
+
+	COLOR.rgb = mix(input_color.rgb, sampled_color, mix_amount);
+	COLOR.a = input_color.a;
+}"
+custom_defines = ""
+
+[resource]
+shader = SubResource( 1 )
+shader_param/mix_amount = 1.0
+shader_param/size = 0.5
+shader_param/gradient = ExtResource( 1 )

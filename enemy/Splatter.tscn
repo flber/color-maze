@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/splatter.png" type="Texture" id=1]
+[ext_resource path="res://enemy/Color.tres" type="Material" id=2]
+[ext_resource path="res://enemy/Splatter.gd" type="Script" id=3]
+
+[node name="Splatter" type="Sprite"]
+material = ExtResource( 2 )
+texture = ExtResource( 1 )
+script = ExtResource( 3 )

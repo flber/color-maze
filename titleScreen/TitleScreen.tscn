@@ -1,0 +1,100 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/menu_background.wav" type="AudioStream" id=1]
+[ext_resource path="res://assets/logo_banner.png" type="Texture" id=2]
+[ext_resource path="res://titleScreen/buttons/QuitButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://titleScreen/buttons/NewGameButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/thumbnail.png" type="Texture" id=5]
+[ext_resource path="res://assets/montserrat_24.tres" type="DynamicFont" id=6]
+[ext_resource path="res://fadeIn/FadeIn.tscn" type="PackedScene" id=7]
+[ext_resource path="res://titleScreen/TitleScreen.gd" type="Script" id=8]
+[ext_resource path="res://titleScreen/buttons/HelpButton.tscn" type="PackedScene" id=9]
+
+[node name="TitleScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="."]
+anchor_left = 0.094
+anchor_top = 0.108
+anchor_right = 0.906
+anchor_bottom = 0.897
+margin_left = -0.320007
+margin_top = 0.0799942
+margin_right = 0.319946
+margin_bottom = -23.78
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Logo" type="TextureRect" parent="Menu"]
+margin_right = 1040.0
+margin_bottom = 150.0
+texture = ExtResource( 2 )
+stretch_mode = 4
+
+[node name="CenterRow" type="HBoxContainer" parent="Menu"]
+margin_top = 154.0
+margin_right = 1040.0
+margin_bottom = 515.0
+size_flags_vertical = 3
+
+[node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow"]
+margin_right = 518.0
+margin_bottom = 361.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 20
+alignment = 1
+
+[node name="NewGameButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 4 )]
+margin_top = 70.0
+margin_right = 518.0
+margin_bottom = 130.0
+
+[node name="HelpButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 9 )]
+margin_top = 150.0
+margin_right = 518.0
+margin_bottom = 210.0
+scene_to_load = "res://game/Help.tscn"
+
+[node name="ContinueButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 3 )]
+margin_top = 230.0
+margin_right = 518.0
+margin_bottom = 290.0
+
+[node name="CenterContainer" type="CenterContainer" parent="Menu/CenterRow"]
+margin_left = 522.0
+margin_right = 1040.0
+margin_bottom = 361.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Menu/CenterRow/CenterContainer"]
+margin_left = 78.0
+margin_right = 439.0
+margin_bottom = 361.0
+texture = ExtResource( 5 )
+
+[node name="VersionLabel" type="Label" parent="Menu"]
+margin_top = 519.0
+margin_right = 1040.0
+margin_bottom = 584.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0.960784, 0.65098, 0.360784, 1 )
+custom_colors/font_color_shadow = Color( 0.666667, 0.6, 0.298039, 1 )
+text = "Version 1.1
+Penwing Studios"
+
+[node name="FadeIn" parent="." instance=ExtResource( 7 )]
+visible = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -5.0
+autoplay = true
