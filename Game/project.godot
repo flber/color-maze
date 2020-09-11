@@ -17,7 +17,6 @@ _global_script_class_icons={
 
 config/name="Mini Jam 62"
 run/main_scene="res://titleScreen/TitleScreen.tscn"
-config/icon="res://icon.png"
 
 [autoload]
 
